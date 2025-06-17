@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-nova: "Bona Nova", ui-serif;
+  --color-gold-light: #FAD96E;
+  --color-gold-dark: #CAA52A;
+  --color-gold: #D7B44B;
+  --color-text: #5F5F5F;
+  --color-text-light: #7B7B7B;
 }
