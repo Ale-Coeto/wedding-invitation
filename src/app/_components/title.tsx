@@ -4,7 +4,7 @@ interface TitleProps {
 }
 
 const Title = ({ label, className }: TitleProps) => {
-    const hasTextSize = className?.includes('text-') || false;
+    const hasTextSize = className?.includes('text-') ?? false;
     const defaultTextSize = hasTextSize ? '' : 'text-xl';
 
     return (
