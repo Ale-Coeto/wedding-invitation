@@ -39,7 +39,7 @@ const EventBlock = ({ title, description, url, icon, underline, buttonLabel, ico
 
             {icon && (
                 <div className="flex flex-col items-center gap-2 justify-center">
-                    <img src={icon} alt={iconDescription || "Icon"} className="w-12 md:w-14 aspect-auto" />
+                    <img src={icon} alt={iconDescription || "Icon"} className="w-12 md:w-16 aspect-auto" />
                     {iconDescription && <span className="text-sm text-text-light">{iconDescription}</span>}
                 </div>
             )}
