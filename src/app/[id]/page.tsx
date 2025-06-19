@@ -1,9 +1,10 @@
 import React from "react";
-import Section from "../_components/section";
 import CountdownSection from "../_components/countdown/countdownSection";
 import DetailsSection from "../_components/details/detailsSection";
 import CeremoniesSection from "../_components/ceremonies/ceremoniesSection";
 import HousingSection from "../_components/housing/housingSection";
+import GallerySection from "../_components/gallery/gallerySection";
+import Footer from "../_components/footer";
 
 const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = React.use(params);
@@ -12,13 +13,25 @@ const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
         <div className="flex flex-col items-center">
             <CountdownSection />
             <DetailsSection />
+            <GallerySection
+                images={[{ src: "/images/image2.jpg", groupWithNext: true }]}
+            />
             <CeremoniesSection />
+            <GallerySection
+                images={[{ src: "/images/image4.jpg", groupWithNext: true }]}
+            />
             <HousingSection />
-            <Section>
-                <div className="h-screen">
-                    he
-                </div>
-            </Section>
+            <GallerySection
+                images={[
+                    { src: "/images/gallery/image1.jpg", groupWithNext: true },
+                    { src: "/images/gallery/image2.jpg" },
+                    { src: "/images/gallery/image3.jpg" },
+                    { src: "/images/gallery/image4.jpg", groupWithNext: true },
+                    { src: "/images/gallery/image5.jpg" },
+                    { src: "/images/gallery/image6.jpg" },
+                ]}
+            />
+            <Footer />
         </div>
     );
 };
