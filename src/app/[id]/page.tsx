@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "../_components/section";
 import CountdownSection from "../_components/countdown/countdownSection";
+import DetailsSection from "../_components/details/detailsSection";
 
 const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = React.use(params);
@@ -8,11 +9,7 @@ const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
     return (
         <div className="flex flex-col items-center">
             <CountdownSection />
-            <Section>
-                <div className="h-screen">
-                    he
-                </div>
-            </Section>
+            <DetailsSection />
             <Section>
                 <div className="h-screen">
                     he
