@@ -4,7 +4,7 @@ import Padres from "./padres";
 
 const DetailsSection = () => {
     return (
-        <div className="relative w-full flex flex-col items-center overflow-hidden" >
+        <div className="relative w-full flex flex-col items-center overflow-hidden pb-6">
             <Section>
                 <div className="w-full flex flex-col items-center justify-center text-center">
                     <div className="text-lg pb-5 italic">
@@ -36,10 +36,10 @@ const DetailsSection = () => {
                 </div>
             </Section>
 
-            <div className="absolute left-0 top-1/2 -translate-x-6 pt-20 md:w-2/5 md:pt-10 md:pr-10 md:flex md:justify-end">
+            <div className="absolute left-0 top-2/5 -translate-x-6 pt-20 md:w-2/5 md:pt-10 md:pr-10 md:flex md:justify-end">
                 <img src="/images/icons/leaf-left.png" alt="Flores" className="w-24" />
             </div>
-            <div className="absolute right-0 top-1/2 translate-x-6 pt-20 md:w-2/5 md:pt-10 md:pl-10 md:flex md:justify-start">
+            <div className="absolute right-0 top-2/5 translate-x-6 pt-20 md:w-2/5 md:pt-10 md:pl-10 md:flex md:justify-start">
                 <img src="/images/icons/leaf-right.png" alt="Flores" className="w-24" />
             </div>
             {/* <div className="absolute right-0 top-1/2 m-10 pt-20 md:w-2/5 md:pt-10 md:pl-10 md:flex md:justify-start">
