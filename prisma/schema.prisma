@@ -65,6 +65,15 @@ model User {
     posts         Post[]
 }
 
+model Guest {
+    id        String  @id @default(cuid())
+    name      String
+    email     String? @unique
+    passes    Int     @default(0)
+    responded Boolean @default(false)
+    confirmedPasses Int @default(0)
+}
+
 model VerificationToken {
     identifier String
     token      String   @unique

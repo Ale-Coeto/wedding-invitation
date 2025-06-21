@@ -4,7 +4,7 @@ import Section from "./section"
 const Footer = () => {
     return (
         <Section imageSection>
-            <Link href="https://www.linkedin.com/in/alecoeto/" target="_blank" className="text-text-light text-right text-sm">
+            <Link href="https://www.linkedin.com/in/alecoeto/" target="_blank" className="flex justify-end w-full text-text-light text-right text-sm">
                 By: Ale Coeto
             </Link>
         </Section>

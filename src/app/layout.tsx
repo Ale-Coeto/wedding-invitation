@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Aída y Víctor",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} bg-slate-100`}>
       <body className="bg-[url('/images/background.png')] bg-repeat bg-center min-h-screen font-nova text-text">
+        <Toaster />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
