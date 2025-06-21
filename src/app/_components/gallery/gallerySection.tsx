@@ -36,7 +36,7 @@ const GallerySection = ({ images }: GallerySectionProps) => {
                                     ) : (
                                         <img
                                             src={current.src}
-                                            alt={current.alt || current.src}
+                                            alt={current.alt ?? current.src}
                                             className="w-full h-auto object-cover rounded-lg shadow-md"
                                         />
                                     )}

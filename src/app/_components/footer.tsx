@@ -1,11 +1,12 @@
+import Link from "next/link";
 import Section from "./section"
 
 const Footer = () => {
     return (
         <Section imageSection>
-            <div className="text-text-light text-right text-sm">
+            <Link href="https://www.linkedin.com/in/alecoeto/" target="_blank" className="text-text-light text-right text-sm">
                 By: Ale Coeto
-            </div>
+            </Link>
         </Section>
     )
 }
