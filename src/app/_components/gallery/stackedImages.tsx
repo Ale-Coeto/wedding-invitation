@@ -5,12 +5,12 @@ const StackedImages = ({ topImage, bottomImage }: { topImage: ImageProps, bottom
     <div className="flex flex-col space-y-4">
       <img
         src={topImage.src}
-        alt={topImage.alt || ''}
+        alt={topImage.alt ?? ''}
         className="w-full h-auto object-cover rounded-lg shadow-md"
       />
       <img
         src={bottomImage.src}
-        alt={bottomImage.alt || ''}
+        alt={bottomImage.alt ?? ''}
         className="w-full h-auto object-cover rounded-lg shadow-md"
       />
     </div>
