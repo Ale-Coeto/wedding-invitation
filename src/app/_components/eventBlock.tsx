@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "../button";
+import Button from "./button";
 
 interface EventProps {
     title: string;
@@ -30,7 +30,7 @@ const EventBlock = ({ title, description, url, icon, underline, buttonLabel, ico
                     !underline ? (
                         <Button label={buttonLabel} url={url} className="mt-5" />
                     ) : (
-                        <Link href={url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                        <Link href={url} target="_blank" className="text-sm text-gold underline hover:text-gold-light">
                             {buttonLabel}
                         </Link>
                     )

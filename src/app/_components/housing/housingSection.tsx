@@ -1,4 +1,4 @@
-import EventBlock from "../ceremonies/eventBlock"
+import EventBlock from "../eventBlock";
 import Section from "../section"
 
 const HousingSection = () => {

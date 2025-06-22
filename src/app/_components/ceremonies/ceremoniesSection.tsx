@@ -1,5 +1,5 @@
+import EventBlock from "../eventBlock";
 import Section from "../section"
-import EventBlock from "./eventBlock";
 
 const CeremoniesSection = () => {
     return (

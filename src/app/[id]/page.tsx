@@ -6,6 +6,7 @@ import HousingSection from "../_components/housing/housingSection";
 import GallerySection from "../_components/gallery/gallerySection";
 import Footer from "../_components/footer";
 import ConfirmationSection from "../_components/confirmation/confirmationSection";
+import NotesSection from "../_components/notes/notesSection";
 
 const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = React.use(params);
@@ -18,6 +19,7 @@ const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
                 images={[{ src: "/images/image2.jpg", groupWithNext: true }]}
             />
             <CeremoniesSection />
+            <NotesSection />
             <ConfirmationSection id={id} />
             <GallerySection
                 images={[{ src: "/images/image4.jpg", groupWithNext: true }]}
