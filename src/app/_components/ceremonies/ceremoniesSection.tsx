@@ -18,7 +18,7 @@ const CeremoniesSection = () => {
                     iconDescription="4:30 PM"
                 />
                 <EventBlock
-                    title="Fiesta"
+                    title="Recepción"
                     description={[
                         "El Ejecutivo Eventos",
                         "Río Danubio 395-B-Ote., Del Valle, 66220",
