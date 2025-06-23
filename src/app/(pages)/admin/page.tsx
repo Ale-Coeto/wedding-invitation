@@ -20,13 +20,13 @@ const AdminPage = async () => {
     }
 
     return (
-        <div className="flex flex-col items-center pt-20">
+        <div className="flex flex-col items-center py-20">
             <h1 className="font-bold text-lg">Invitados</h1>
             <p> Lista de invitados, estado y número de pases</p>
             <div>
                 <GuestList />
             </div>
-            
+
             <Link
                 href={"/api/auth/signout"}
             >
