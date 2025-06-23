@@ -5,10 +5,11 @@ import { auth } from "~/server/auth";
 import Link from "next/link";
 import Login from "~/app/_components/admin/login";
 import GuestList from "~/app/_components/admin/guestList";
+import { api } from "~/trpc/react";
+import Spinner from "~/app/_components/spinner";
 
 const AdminPage = async () => {
     const session = await auth();
-
 
     if (!session?.user) {
         return (
@@ -28,6 +29,7 @@ const AdminPage = async () => {
             <div>
                 <GuestList />
             </div>
+            
             <Link
                 href={"/api/auth/signout"}
             >

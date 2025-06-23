@@ -19,7 +19,7 @@ export const guestRouter = createTRPCRouter({
     getAll: protectedProcedure
     .query(async ({ ctx }) => {
         const guests = await ctx.db.guest.findMany({
-            orderBy: { name: "desc" },
+            orderBy: { name: "asc" },
         });
         return guests;
     }),
@@ -44,4 +44,73 @@ export const guestRouter = createTRPCRouter({
 
         return guest;
     }),
+
+    getGuestById: protectedProcedure
+    .input(z.string().nullable())
+    .query(async ({ ctx, input }) => {
+        if (!input) {
+            return null;
+        }
+        const guest = await ctx.db.guest.findUnique({
+            where: { id: input },
+        });
+
+        if (!guest) {
+            throw new Error("Guest not found");
+        }
+
+        return guest;
+    }),
+
+    createGuest: protectedProcedure
+    .input(z.object({
+        name: z.string(),
+        passes: z.number().min(1).max(10).default(1),
+    }))
+    .mutation(async ({ ctx, input }) => {
+        const newGuest = await ctx.db.guest.create({
+            data: {
+                name: input.name,
+                passes: input.passes,
+            },
+        });
+
+        return newGuest;
+    }),
+
+    updateGuest: protectedProcedure
+    .input(z.object({
+        id: z.string(),
+        name: z.string(),
+        passes: z.number().min(1).max(10).default(1),
+    }))
+    .mutation(async ({ ctx, input }) => {   
+        const updatedGuest = await ctx.db.guest.update({
+            where: { id: input.id },
+            data: {
+                name: input.name,
+                passes: input.passes,
+            },
+        });
+
+        if (!updatedGuest) {
+            throw new Error("Guest not found");
+        }
+
+        return updatedGuest;
+    }),
+
+    deleteGuest: protectedProcedure
+    .input(z.string())
+    .mutation(async ({ ctx, input }) => {
+        const deletedGuest = await ctx.db.guest.delete({
+            where: { id: input },
+        });
+
+        if (!deletedGuest) {
+            throw new Error("Guest not found");
+        }
+
+        return deletedGuest;
+    })
 })
