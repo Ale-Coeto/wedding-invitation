@@ -2,7 +2,6 @@ import { api } from "~/trpc/react";
 import Modal from "../modal"
 import Title from "../title";
 import { useState } from "react";
-import Spinner from "../spinner";
 import type { Guest } from "@prisma/client";
 import Button from "../button";
 import toast from "react-hot-toast";

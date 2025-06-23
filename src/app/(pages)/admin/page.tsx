@@ -1,12 +1,9 @@
 
 import Button from "~/app/_components/button";
-import { signIn } from 'next-auth/react';
 import { auth } from "~/server/auth";
 import Link from "next/link";
 import Login from "~/app/_components/admin/login";
 import GuestList from "~/app/_components/admin/guestList";
-import { api } from "~/trpc/react";
-import Spinner from "~/app/_components/spinner";
 
 const AdminPage = async () => {
     const session = await auth();

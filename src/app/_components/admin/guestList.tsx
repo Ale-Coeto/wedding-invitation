@@ -12,8 +12,8 @@ const GuestList = () => {
     const [openModal, setOpenModal] = useState(false);
     const [selectedGuest, setSelectedGuest] = useState<Guest | null>(null);
     const { data: guests, isLoading } = api.guest.getAll.useQuery();
-    const copy = (link: string) => {
-        navigator.clipboard.writeText(link)
+    const copy = async (link: string) => {
+        await navigator.clipboard.writeText(link)
             .then(() => {
                 toast.success("Copiado!")
             })

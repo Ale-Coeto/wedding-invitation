@@ -1,9 +1,5 @@
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
-import Button from "./_components/button";
-import Section from "./_components/section";
-import Title from "./_components/title";
-import Header from "./_components/header";
 import CountdownSection from "./_components/countdown/countdownSection";
 import DetailsSection from "./_components/details/detailsSection";
 import CeremoniesSection from "./_components/ceremonies/ceremoniesSection";
