@@ -7,6 +7,7 @@ import GallerySection from "../../_components/gallery/gallerySection";
 import Footer from "../../_components/footer";
 import ConfirmationSection from "../../_components/confirmation/confirmationSection";
 import NotesSection from "../../_components/notes/notesSection";
+import BackgroundMusic from "~/app/_components/music";
 
 const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = React.use(params);
@@ -36,6 +37,7 @@ const WeekPage = ({ params }: { params: Promise<{ id: string }> }) => {
                 ]}
             />
             <Footer />
+            <BackgroundMusic />
         </div>
     );
 };
