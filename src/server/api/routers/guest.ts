@@ -44,6 +44,22 @@ export const guestRouter = createTRPCRouter({
 
         return guest;
     }),
+    
+    confirmVegetarian: publicProcedure
+    .input(z.object({
+        id: z.string(),
+        vegetarian: z.number().min(0).max(10).default(0),
+    }))
+    .mutation(async ({ ctx, input }) => {
+        const guest = await ctx.db.guest.update({
+            where: { id: input.id },
+            data: {
+                vegetarian: input.vegetarian,
+            },
+        });
+        
+        return guest;
+    }),
 
     getGuestById: protectedProcedure
     .input(z.string().nullable())

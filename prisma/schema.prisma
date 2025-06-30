@@ -60,19 +60,20 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
-    admin Boolean   @default(false)
+    admin         Boolean   @default(false)
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
 }
 
 model Guest {
-    id        String  @id @default(cuid())
-    name      String
-    email     String? @unique
-    passes    Int     @default(0)
-    responded Boolean @default(false)
-    confirmedPasses Int @default(0)
+    id              String  @id @default(cuid())
+    name            String
+    email           String? @unique
+    passes          Int     @default(0)
+    responded       Boolean @default(false)
+    confirmedPasses Int     @default(0)
+    vegetarian      Int     @default(0)
 }
 
 model VerificationToken {

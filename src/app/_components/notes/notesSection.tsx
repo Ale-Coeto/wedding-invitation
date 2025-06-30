@@ -15,6 +15,9 @@ const NotesSection = () => {
                     <EventBlock title={"Mesa de Regalos"} description={[
                         "Sobre",
                     ]} url={"https://www.liverpool.com.mx/tienda/home"} buttonLabel="Ir a mesa de regalos" underline />
+                    <div className="italic">
+                        *Solo adultos
+                    </div>
                 </div>
             </div>
         </Section>

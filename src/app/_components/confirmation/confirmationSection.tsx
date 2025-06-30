@@ -7,10 +7,13 @@ import Spinner from "../spinner";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import ConfirmModal from "./confirmModal";
+import { FiPlus } from "react-icons/fi";
+import VeganModal from "./veganModal";
 
 const ConfirmationSection = ({ id }: { id: string }) => {
     const [modify, setModify] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [openVeganModal, setOpenVeganModal] = useState(false);
     const { data: guest, isLoading, error } = api.guest.getGuest.useQuery(id);
     const utils = api.useUtils();
     const confirmAttendance = api.guest.confirmAttendance.useMutation({
@@ -20,6 +23,17 @@ const ConfirmationSection = ({ id }: { id: string }) => {
         },
         onError: (error) => {
             toast.error("Error al confirmar asistencia: " + error.message);
+        },
+    });
+
+    const confirmVegetarian = api.guest.confirmVegetarian.useMutation({
+        onSuccess: async (data) => {
+            toast.success("Platillos especiales confirmados" + (data.vegetarian === 1 ? ` (${data.vegetarian} platillo)` : ` (${data.vegetarian} platillos)`));
+            await utils.guest.invalidate();
+        },
+        onError: (error) => {
+            console.log("NELL")
+            toast.error("Error al confirmar platillos especiales: " + error.message);
         },
     });
 
@@ -42,6 +56,11 @@ const ConfirmationSection = ({ id }: { id: string }) => {
             </Section>
         );
     }
+
+    const handleVeganConfirm = (plates: number) => {
+        confirmVegetarian.mutate({ id: guest.id, vegetarian: plates });
+        setOpenVeganModal(false);
+    };
 
     const handleConfirm = (pases: number) => {
         confirmAttendance.mutate({ id: guest.id, confirmedPasses: pases });
@@ -95,6 +114,17 @@ const ConfirmationSection = ({ id }: { id: string }) => {
                             </div>
                         </>
                     )}
+                    <div className="flex flex-col items-center justify-center pt-10">
+                        <div>
+                            Vegetariano/Vegano?
+                        </div>
+                        <button
+                            onClick={() => setOpenVeganModal(true)}
+                            className="p-2 bg-white rounded-full shadow hover:bg-gray-200 transition"
+                        >
+                            <FiPlus />
+                        </button>
+                    </div>
                 </div>
             </Section>
             {openModal && (
@@ -102,6 +132,14 @@ const ConfirmationSection = ({ id }: { id: string }) => {
                     isOpen={openModal}
                     onClose={() => setOpenModal(false)}
                     onConfirm={handleConfirm}
+                    guest={guest}
+                />
+            )}
+            {openVeganModal && (
+                <VeganModal
+                    isOpen={openVeganModal}
+                    onClose={() => setOpenVeganModal(false)}
+                    onConfirm={handleVeganConfirm}
                     guest={guest}
                 />
             )}
