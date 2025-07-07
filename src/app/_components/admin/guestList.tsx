@@ -116,6 +116,7 @@ const GuestList = () => {
                                 <th className="px-4 py-2 border-b">Respondió</th>
                                 <th className="px-4 py-2 border-b">Pases</th>
                                 <th className="px-4 py-2 border-b">Pases confirmados</th>
+                                <th className="px-4 py-2 border-b">Platillos especiales</th>
                                 <th className="px-4 py-2 border-b">Link de invitación</th>
                                 {canEdit && (
                                     <th className="px-4 py-2 border-b"></th>
@@ -134,6 +135,7 @@ const GuestList = () => {
                                     </td>
                                     <td className="px-4 py-2 border-b border-text-light">{guest.passes}</td>
                                     <td className="px-4 py-2 border-b border-text-light">{guest.confirmedPasses}</td>
+                                    <td className="px-4 py-2 border-b border-text-light">{guest.vegetarian}</td>
                                     <td className="px-4 py-2 border-b border-text-light cursor-pointer hover:text-gold" onClick={() => copy(`https://aida-y-victor.vercel.app/${guest.id}`)}>
                                         <span className="truncate max-w-xs block">https://aida-y-victor.vercel.app/{guest.id}</span>
                                     </td>

@@ -7,8 +7,8 @@ const DetailsSection = () => {
         <div className="relative w-full flex flex-col items-center overflow-hidden pb-6">
             <Section>
                 <div className="w-full flex flex-col items-center justify-center text-center">
-                    <div className="text-lg pb-5 italic">
-                        Con la bendición de Dios y nuestros padres
+                    <div className="text-lg pb-5 italic font-semibold">
+                        Con la bendición de Dios y de nuestros padres
                     </div>
 
                     <div className="w-full flex flex-col lg:items-center lg:flex-row gap-6 justify-between lg:px-10 text-text-light">
