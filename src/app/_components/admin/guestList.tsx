@@ -93,6 +93,10 @@ const GuestList = () => {
                                     <span>Pases confirmados:</span>
                                     <span>{guest.confirmedPasses}</span>
                                 </div>
+                                <div className="flex justify-between">
+                                    <span>Platillos especiales:</span>
+                                    <span>{guest.vegetarian}</span>
+                                </div>
                                 <div className="mt-4">
                                     <button
                                         onClick={() => copy(`https://aida-y-victor.vercel.app/${guest.id}`)}
