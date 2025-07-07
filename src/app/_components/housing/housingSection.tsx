@@ -5,7 +5,7 @@ const HousingSection = () => {
     return (
         <Section>
             <EventBlock
-                title="Hospedaje"
+                title="Antaris"
                 description={[
                     "Hotel Fiesta Americana Monterrey Pabellón M",
                     "Av. Constitución 300 Ote., Centro, 64000",

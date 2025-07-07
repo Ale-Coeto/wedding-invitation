@@ -23,6 +23,7 @@ const CeremoniesSection = () => {
                         "El Ejecutivo Eventos",
                         "Río Danubio 395-B-Ote., Del Valle, 66220",
                         "San Pedro Garza García, NL",
+                        "*Solo para adultos"
                     ]}
                     buttonLabel="Ubicación"
                     url="https://maps.app.goo.gl/TMx7ryWhVgYeYGFs7"

@@ -86,8 +86,11 @@ const ConfirmationSection = ({ id }: { id: string }) => {
                             <div className="font-bold pt-10 pb-0">
                                 {guest.name ?? "Invitado"}
                             </div>
-                            <div className="pt-0 pb-8">
+                            <div className="pt-0">
                                 {guest.confirmedPasses} {guest.confirmedPasses === 1 ? "pase confirmado" : "pases confirmados"}
+                            </div>
+                            <div className="pb-8">
+                                {guest.vegetarian == 1 ? `(${guest.vegetarian} platillo especial)` : `${guest.vegetarian} platillos especiales`}
                             </div>
                             <Button label="Cambiar respuesta" onClick={() => setModify(true)} />
                         </>
@@ -101,30 +104,36 @@ const ConfirmationSection = ({ id }: { id: string }) => {
                                 {guest.name ?? "Invitado"}
                             </div>
                             <div className="pt-0">
-                                {guest.passes} {guest.passes === 1 ? "pase" : "pases"}
+                                {guest.passes} {guest.passes === 1 ? "pase disponible" : "pases disponibles"}
                             </div>
                             {modify && (
-                                <div className="pt-0">
-                                    {guest.confirmedPasses} {guest.confirmedPasses === 1 ? "pase confirmado" : "pases confirmados"}
-                                </div>
+                                <>
+                                    <div className="pt-0">
+                                        {guest.confirmedPasses} {guest.confirmedPasses === 1 ? "pase confirmado" : "pases confirmados"}
+                                    </div>
+                                </>
                             )}
+
+                            <div className="flex flex-col items-center justify-center pt-10">
+                                <div className="pb-2 font-semibold">
+                                    ¿Vegetariano/Vegano?
+                                </div>
+                                <button
+                                    onClick={() => setOpenVeganModal(true)}
+                                    className="p-2 bg-white rounded-full shadow hover:bg-gray-200 transition"
+                                >
+                                    <FiPlus />
+                                </button>
+                            </div>
+
                             <div className="flex flex-row justify-center gap-4 pt-10">
                                 <Button label="Más opciones" secondary onClick={() => setOpenModal(true)} />
                                 <Button label="Confirmar" onClick={handleQuickConfirm} />
                             </div>
+
                         </>
                     )}
-                    <div className="flex flex-col items-center justify-center pt-10">
-                        <div>
-                            Vegetariano/Vegano?
-                        </div>
-                        <button
-                            onClick={() => setOpenVeganModal(true)}
-                            className="p-2 bg-white rounded-full shadow hover:bg-gray-200 transition"
-                        >
-                            <FiPlus />
-                        </button>
-                    </div>
+
                 </div>
             </Section>
             {openModal && (
