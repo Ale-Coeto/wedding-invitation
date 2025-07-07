@@ -5,14 +5,14 @@ const HousingSection = () => {
     return (
         <Section>
             <EventBlock
-                title="Antaris"
+                title="Hospedaje"
                 description={[
-                    "Hotel Fiesta Americana Monterrey Pabellón M",
-                    "Av. Constitución 300 Ote., Centro, 64000",
-                    "Monterrey, N.L.",
+                    "Antaris Valle",
+                    "Río Danubio Oriente 400, Del Valle, 66220",
+                    "San Pedro Garza García, N.L., México",
                 ]}
                 buttonLabel="Ubicación"
-                url="https://goo.gl/maps/1b7d8c5Z2f6z9x3F6"
+                url="https://maps.app.goo.gl/9kTHPqSeYffAsE8W7"
                 icon="/images/icons/hotel.png"
                 iconDescription=""
             />
