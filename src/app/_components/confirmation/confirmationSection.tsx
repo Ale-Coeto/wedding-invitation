@@ -98,7 +98,7 @@ const ConfirmationSection = ({ id }: { id: string }) => {
                         <>
                             <p className="text-center text-text italic">
                                 Queremos compartir este momento contigo, <br />
-                                Ayúdanos confirmando tu asistencia
+                                ayúdanos confirmando tu asistencia
                             </p>
                             <div className="font-bold pt-10 pb-0">
                                 {guest.name ?? "Invitado"}

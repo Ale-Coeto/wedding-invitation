@@ -6,6 +6,7 @@ import CeremoniesSection from "./_components/ceremonies/ceremoniesSection";
 import GallerySection from "./_components/gallery/gallerySection";
 import Footer from "./_components/footer";
 import BackgroundMusic from "./_components/music";
+import HousingSection from "./_components/housing/housingSection";
 
 export default async function Home() {
   const session = await auth();
@@ -23,6 +24,7 @@ export default async function Home() {
           images={[{ src: "/images/image2.jpg", groupWithNext: true }]}
         />
         <CeremoniesSection />
+        <HousingSection />
         <GallerySection
           images={[
             { src: "/images/gallery/image1.jpg", groupWithNext: true },

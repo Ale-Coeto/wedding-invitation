@@ -14,7 +14,7 @@ interface EventProps {
 const EventBlock = ({ title, description, url, icon, underline, buttonLabel, iconDescription }: EventProps) => {
     return (
         <div className="flex flex-row justify-between items-center">
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start w-2/3">
                 <div className="font-bold">
                     {title}
                 </div>
