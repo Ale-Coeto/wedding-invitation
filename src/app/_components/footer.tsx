@@ -4,8 +4,8 @@ import Section from "./section"
 const Footer = () => {
     return (
         <Section imageSection>
-            <Link href="https://www.linkedin.com/in/alecoeto/" target="_blank" className="flex justify-end w-full text-text-light text-right text-sm">
-                By: Ale Coeto
+            <Link href="https://www.linkedin.com/in/alecoeto/" target="_blank" className="flex justify-end w-full text-text-light text-right text-sm hover:underline">
+                ACS
             </Link>
         </Section>
     )
